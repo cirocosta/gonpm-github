@@ -1,4 +1,5 @@
-# Go NPM-GitHub
+# Go NPM-GitHub [![Build Status](https://travis-ci.org/cirocosta/gonpm-github.svg?branch=master)](https://travis-ci.org/cirocosta/gonpm-github)
+
 > Triggers the default browser the GitHub page of NPM module .
 
 ## Install

@@ -4,6 +4,7 @@
   "description": "A pretty simple and easy way to see the github page of a npm module.",
   "main": "index.js",
   "bin": {
+  	"gonpm-github": "bin/gonpm-github",
     "npm-github": "bin/gonpm-github"
   },
   "scripts": {

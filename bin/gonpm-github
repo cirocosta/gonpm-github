@@ -31,7 +31,7 @@ if (input.length) {
 		if (err)
 			logger.error('Couldn\'t find GitHub URL for ' + process.argv[2]);
 
-		browser(url);
+		(browser(url), process.exit(0));
 	});
 } else {
   logger.error('You need to specify a question at least.');
