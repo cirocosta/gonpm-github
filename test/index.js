@@ -4,9 +4,7 @@ var assert = require('assert')
 	,	sinon = require('sinon')
 	,	request = require('request')
 	,	fs = require('fs')
-	,	gonpmGithub = require('../lib/index')
-
-	, PATH_SAMPLE = require('path').resolve(__dirname, './sample.json');
+	,	gonpmGithub = require('../lib/index');
 
 
 describe('gonpmGithub', function() {
@@ -42,9 +40,21 @@ describe('gonpmGithub', function() {
 	});
 
 	describe('resolve', function() {
-		it('find a repository if repository field present', function(done) {
-			var file = fs.createReadStream(PATH_SAMPLE);
-			var expected = 'https://github.com/cirocosta/pasquale'
+		it('find a repository if repository field present w/ https', function(done) {
+			var file = fs.createReadStream(__dirname + '/sample-https.json');
+			var expected = 'https://github.com/cirocosta/pasquale';
+
+			gonpmGithub.resolve(file, function (err, url) {
+				if (err) done(err);
+
+				assert.equal(url, expected);
+				done();
+			});
+		});
+
+		it('find a repository if repository field present w/ git', function(done) {
+			var file = fs.createReadStream(__dirname + '/sample-git.json');
+			var expected = 'https://github.com/ProjectMoon/flux';
 
 			gonpmGithub.resolve(file, function (err, url) {
 				if (err) done(err);

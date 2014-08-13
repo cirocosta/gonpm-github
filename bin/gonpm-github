@@ -35,4 +35,5 @@ if (input.length) {
 	});
 } else {
   logger.error('You need to specify a question at least.');
+  process.exit(1);
 }

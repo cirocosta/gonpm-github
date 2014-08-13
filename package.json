@@ -1,10 +1,10 @@
 {
   "name": "gonpm-github",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "description": "A pretty simple and easy way to see the github page of a npm module.",
   "main": "index.js",
   "bin": {
-  	"gonpm-github": "bin/gonpm-github",
+    "gonpm-github": "bin/gonpm-github",
     "npm-github": "bin/gonpm-github"
   },
   "scripts": {
@@ -19,7 +19,7 @@
   "dependencies": {
     "JSONStream": "^0.9.0",
     "commander": "^2.2.0",
-    "event-stream": "^3.1.7",
+    "map-stream": "^0.1.0",
     "open": "0.0.5",
     "request": "^2.40.0",
     "simlog": "^0.1.5"
