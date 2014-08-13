@@ -1,5 +1,5 @@
 # Go NPM-GitHub
-A pretty simple and easy way to find solutions at StackOverflow.
+> Triggers the default browser the GitHub page of NPM module .
 
 ## Install
 
