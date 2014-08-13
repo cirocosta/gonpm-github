@@ -1,42 +1,30 @@
 {
-  "name": "gostack",
+  "name": "gonpm-github",
   "version": "0.1.1",
-  "description": "A pretty simple and easy way to find solutions at StackOverflow.",
+  "description": "A pretty simple and easy way to see the github page of a npm module.",
   "main": "index.js",
   "bin": {
-    "gostack": "bin/gostack",
-    "stack": "bin/gostack"
+    "npm-github": "bin/gonpm-github"
   },
   "scripts": {
-    "test": "gulp test"
+    "test": "mocha test"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://vitorbritto@github.com/vitorbritto/gostack.git"
-  },
-  "author": "Vitor Britto <code@vitorbritto.com.br> (http://vitorbritto.com.br/)",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/vitorbritto/gostack/issues"
-  },
-  "homepage": "https://github.com/vitorbritto/gostack",
   "keywords": [
-    "stackoverflow",
-    "questions",
-    "research",
-    "references"
+    "npm",
+    "github",
+    "search"
   ],
   "dependencies": {
+    "JSONStream": "^0.9.0",
     "commander": "^2.2.0",
+    "event-stream": "^3.1.7",
     "open": "0.0.5",
+    "request": "^2.40.0",
     "simlog": "^0.1.5"
   },
   "devDependencies": {
-    "chai": "~1.9.1",
-    "gulp": "^3.6.2",
-    "gulp-jshint": "^1.5.5",
-    "gulp-mocha": "^0.4.1",
-    "jshint-stylish": "^0.2.0",
-    "mocha": "^1.18.2"
+    "mocha": "^1.18.2",
+    "sinon": "^1.10.3"
   }
 }
