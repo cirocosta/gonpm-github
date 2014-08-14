@@ -2,36 +2,31 @@
 
 'use strict';
 
-// =====================================================
-// CONFIGURATION
-// =====================================================
+var logger  = require('simlog')
+	,	browser  = require('open')
+	,	pkg     = require('../package')
+	,	input   = process.argv.slice(2)
+	,	cmd     = require('commander')
+	,	gonpmGithub = require('../lib');
 
-var logger  = require('simlog'),
-		browser  = require('open'),
-    pkg     = require('../package'),
-    input   = process.argv.slice(2),
-    cmd     = require('commander'),
-    gonpmGithub = require('../lib');
-
-var search = gonpmGithub.search,
-		resolve = gonpmGithub.resolve;
+var search = gonpmGithub.search
+	,	resolve = gonpmGithub.resolve;
 
 cmd
   .version('GoNpm-Github v.' + pkg.version, '-v, --version')
   .usage('gonpm-github <question>')
   .parse(process.argv);
 
-// =====================================================
-// CLI
-// =====================================================
-
 if (input.length) {
-  logger.info('Openning browser... please wait.');
+  logger.info('Searching for ' + process.argv[2]);
   resolve(search(process.argv[2]), function (err, url) {
 		if (err)
-			logger.error('Couldn\'t find GitHub URL for ' + process.argv[2]);
+			logger.error('Couldn\'t find GitHub URL for ' + process.argv[2]),
+			process.exit(1);
 
-		(browser(url), process.exit(0));
+		logger.info('Found ' + url);
+    logger.info('Openning browser ...');
+    (browser(url), process.exit(0));
 	});
 } else {
   logger.error('You need to specify a question at least.');

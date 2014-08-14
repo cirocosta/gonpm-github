@@ -63,5 +63,14 @@ describe('gonpmGithub', function() {
 				done();
 			});
 		});
+
+		it('should fail gracefully', function(done) {
+			var file = fs.createReadStream(__dirname + '/wrong-sample.txt');
+
+			gonpmGithub.resolve(file, function (err, url) {
+				assert(err);
+				done();
+			});
+		});
 	});
 });
